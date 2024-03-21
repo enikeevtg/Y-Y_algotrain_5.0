@@ -29,12 +29,6 @@ int main() {
       }
       sector += n;
     }
-    // for (int sector = i; sector <= far; sector += n) {
-    //   if (sector >= closer && sector <= far) {
-    //     max_prize = std::max(max_prize, std::max(v[i], v[n - i]));
-    //     break;
-    //   }
-    // }
   }
 
   std::cout << max_prize;

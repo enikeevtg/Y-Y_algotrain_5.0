@@ -20,28 +20,26 @@ int main() {
       std::cin >> cur_el;
       ++cur_len;
 
-      // Пришёл элемент меньше текущей длины
+      // Пришёл элемент < текущей длины
       if (cur_el < cur_len) {
         len[count] = cur_len - 1;
         ++count;
         cur_len = 1;
       }
 
-      // Либо продолжаем обрабатываем элемент меньше текущей длины 
+      // Начинаем новый подмассив (включая обработку элемента < текущей длины)
       if (len[count] == 0) {
         len[count] = cur_el;
       }
 
+      // Пришёл элемент >= текущей длине
       if (cur_el == cur_len) {
-        // std::cout << cur_el << "==" << cur_len << '\n';
         len[count] = cur_len;
         ++count;
         cur_len = 0;
       } else {
         len[count] = std::min(len[count], cur_el);
-        // std::cout << "len[count]" << "==" << len[count] << '\n';
         if (cur_len == len[count] || i == n - 1) {
-          // std::cout << "cur_len == len[count] || i < n - 1" << '\n';
           len[count] = cur_len;
           ++count;
           cur_len = 0;

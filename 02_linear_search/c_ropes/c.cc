@@ -21,8 +21,8 @@ int main() {
   }
 
   int result_rope = 0;
-  if (sum_length - max_rope < max_rope) {
-    result_rope = max_rope - (sum_length - max_rope);
+  if (max_rope * 2 > sum_length) {
+    result_rope = max_rope * 2 - sum_length;
   } else {
     result_rope = sum_length;
   }
